@@ -1,24 +1,26 @@
-// intersection types
+// type aliases
 
-let a: number & string;
-// so here it shows the the type of a is never
+// premetive type aliases
+type sankhya = number;
+let b: sankhya;
+    // here we created a type named sankhya.
 
 
-type City = {
+// object type aliases
+type Humen = {
     name: string,
-    population: number,
+    phone: number,
+    email: string,
 }
 
-type Planet = {
-    name: string,
-    cities: number,
+let a: Humen = {
+    name: "any name",
+    phone: 1234,
+    email: "any@gmail.com",
 }
 
-type citiesInPlanet = City & Planet;
-let value: citiesInPlanet = {
-    name: "Kolkata",
-    population: 10000,
-    cities: 12
-}
+// --------------
 
-// if one of the value was missing then it shows an error.
+type Age = string | number;
+
+let d = 2;
