@@ -1,62 +1,25 @@
-class Airpod{
-    price = 25000;
-    image = "image/jpg";
-    color = "white";
-
-    playMusic(){
-        console.log("playing...");
-    }
-}
-
-// here we write some variable and a fucntion but here we did not need to write let... or fucntion etc.
-
-class AirConditioner{
-    color = "white";
-    tonnes = 25;
-    company = "voltas";
-
-    temperature = 22;
-
-    turnOn = () => {
-        console.log("turn on");
-    }
-
-    turnOff = () => {
-        console.log("turn off");
-    }
-
-    raisTemperature = () => {
-        this.temperature++;
-        console.log(this.temperature);
-    }
-
-    decreaseTemperature = () => {
-        this.temperature--;
-        console.log(this.temperature);
-    }
-}
-
-// let ac = new AirConditioner();
-// ac.raisTemperature();
-// ac.raisTemperature();
-
-type Data = string | null;
+// constructor is a method in a class which strat first compare to others and initialize all the variables
 
 class Pendrive{
-    company = "hp";
-    price = 12000;
-    data: null | string = null;
+    public company: string;
+    // we dont have to write public by default it is set.
 
-    putData = (data: Data) => {
-        console.log(`put some data ${data}`);
-        this.data = data;
-    }
-
-    getData = () => {
-        console.log(this.data);
+    constructor(name: string){
+        this.company = name;
     }
 }
 
-let pendrive1 = new Pendrive();
-pendrive1.putData("12");
-pendrive1.getData();
+let pen1 = new Pendrive("hp");
+let pen2 = new Pendrive("asus");
+console.log(pen1, pen2);
+
+// 
+
+class User{
+    constructor(public name: string, public ph: number)
+    {
+        this.name = name;
+        this.ph = ph;
+        // so we dont need to declear at athe top if we just write pulic first inside the constructor.
+    }
+}
