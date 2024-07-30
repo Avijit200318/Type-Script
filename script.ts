@@ -1,38 +1,62 @@
-// difference between type and interface
+class Airpod{
+    price = 25000;
+    image = "image/jpg";
+    color = "white";
 
-// 1.
-type snakhya= number;
-
-interface Humen{
-    name: string,
+    playMusic(){
+        console.log("playing...");
+    }
 }
 
-// 2
-// type name = string;
-// type name = number;
+// here we write some variable and a fucntion but here we did not need to write let... or fucntion etc.
 
-// thsi give me an error
+class AirConditioner{
+    color = "white";
+    tonnes = 25;
+    company = "voltas";
 
-interface Student{
-    name: string,
+    temperature = 22;
+
+    turnOn = () => {
+        console.log("turn on");
+    }
+
+    turnOff = () => {
+        console.log("turn off");
+    }
+
+    raisTemperature = () => {
+        this.temperature++;
+        console.log(this.temperature);
+    }
+
+    decreaseTemperature = () => {
+        this.temperature--;
+        console.log(this.temperature);
+    }
 }
 
-interface Student{
-    number: 38758347,
+// let ac = new AirConditioner();
+// ac.raisTemperature();
+// ac.raisTemperature();
+
+type Data = string | null;
+
+class Pendrive{
+    company = "hp";
+    price = 12000;
+    data: null | string = null;
+
+    putData = (data: Data) => {
+        console.log(`put some data ${data}`);
+        this.data = data;
+    }
+
+    getData = () => {
+        console.log(this.data);
+    }
 }
 
-// this didnot give us any error the two Student merge
-
-interface Food{
-    name: string,
-    price: number,
-}
-
-interface MithaFood extends Food{
-    test: string,
-}
-
-function getMithaFood(food: MithaFood)
-{
-    // food.  then we get here name, price and test.
-}
+let pendrive1 = new Pendrive();
+pendrive1.putData("12");
+pendrive1.getData();
