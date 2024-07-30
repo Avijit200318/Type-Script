@@ -1,26 +1,38 @@
-// type aliases
+// difference between type and interface
 
-// premetive type aliases
-type sankhya = number;
-let b: sankhya;
-    // here we created a type named sankhya.
+// 1.
+type snakhya= number;
 
-
-// object type aliases
-type Humen = {
+interface Humen{
     name: string,
-    phone: number,
-    email: string,
 }
 
-let a: Humen = {
-    name: "any name",
-    phone: 1234,
-    email: "any@gmail.com",
+// 2
+// type name = string;
+// type name = number;
+
+// thsi give me an error
+
+interface Student{
+    name: string,
 }
 
-// --------------
+interface Student{
+    number: 38758347,
+}
 
-type Age = string | number;
+// this didnot give us any error the two Student merge
 
-let d = 2;
+interface Food{
+    name: string,
+    price: number,
+}
+
+interface MithaFood extends Food{
+    test: string,
+}
+
+function getMithaFood(food: MithaFood)
+{
+    // food.  then we get here name, price and test.
+}
